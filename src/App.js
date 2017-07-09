@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './components/Home';
 import SpotifyCallback from './components/SpotifyCallback';
+import AlbumWall from './components/AlbumWall';
 import axios from 'axios';
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Route exact path="/" render={props => <Home user={this.state.userId} />} />
+          <Route exact path="/album_wall" component={AlbumWall} />
           <Route path="/spotify_callback" render={props => <SpotifyCallback updateUserId={this.updateUserId}/>} />
         </div>
       </BrowserRouter>

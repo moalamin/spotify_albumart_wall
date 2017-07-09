@@ -7,12 +7,14 @@ export default (props) => {
   localStorage.setItem('spotify-access-token', authInfo["access_token"])
   localStorage.setItem('spotify-token-type', authInfo["token_type"])
   return (
-    <Link to='/' onClick={props.updateUserId}>
-      <div className="btn-group-lg">
-        <button className="btn btn-primary">
-          Generate Albums
-        </button>
-      </div>
-    </Link>
+    <div className="row justify-content-center">
+      <Link to='/album_wall' onClick={props.updateUserId}>
+        <div className="btn-group-lg">
+          <button className="btn btn-primary">
+            See The Wall
+          </button>
+        </div>
+      </Link>
+    </div>
   )
 }
