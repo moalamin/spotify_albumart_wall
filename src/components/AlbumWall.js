@@ -1,6 +1,8 @@
 /* global localStorage */
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import spotify from '../spotify'
 
 export default class AlbumWall extends Component {
   constructor(props) {
@@ -33,6 +35,10 @@ export default class AlbumWall extends Component {
       ? <div className="row justify-content-center">
           {albums}
         </div>
-      : <h1>Albums Will Show Here</h1>;
+      : <div className="row justify-content-center">
+          <h1>
+            Please <a href={`https://accounts.spotify.com/authorize?client_id=${spotify.client_id}&redirect_uri=http://localhost:4000/spotify_callback&response_type=token&scope=user-top-read`}>Log In</a> To Retrieve Albums
+          </h1>
+        </div>;
   }
 }
